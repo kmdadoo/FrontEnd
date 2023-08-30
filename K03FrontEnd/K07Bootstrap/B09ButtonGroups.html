@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B09ButtonGroups.html</title>
+<link rel="stylesheet" href="./bootstrap5.2.3/css/bootstrap.css">
+<script src="bootstrap5.2.3/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>드롭다운메뉴가 있는 버튼 그룹</h2>
+    <!-- 버튼그룹 : 버튼을 그룹화하여 네비게이션처럼 출력한다. -->
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary">
+            Java
+        </button>
+        <button type="button" class="btn btn-primary">
+            Oracle
+        </button>
+        <!-- data-bs-toggle : 부트스트랩에서 제공하는 속성으로
+        여기서는 드롭다운 메뉴를 추가한다. -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary 
+            dropdown-toggle" data-bs-toggle="dropdown">
+            웹표준UI
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">HTML5</a>
+                <a class="dropdown-item" href="#">CSS3</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>

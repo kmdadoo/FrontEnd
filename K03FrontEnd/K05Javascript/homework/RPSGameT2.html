@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script>
+//HTML문서 전체에서 사용할수 있는 전역변수로 선언
+var comImg, userImg;
+//문서의 로드가 완료된 후 DOM을 가져올수 있도록 처리
+window.onload = function(){
+    //컴퓨터와 사용자가 낼 가위바위보 이미지의 DOM객체
+    comImg = document.getElementById("com");
+    userImg = document.getElementById("user");
+}
+
+var imgArr = ['scissors','rock','paper'];
+var incNum1 = 0, incNum2 = 2;
+var timer;
+
+function imgChange(){
+    incNum1++; incNum2++;
+    //console.log("나 호출됨..!!")
+    comImg.src = '../images/'+imgArr[incNum1%3]+'.jpg';
+    userImg.src = '../images/'+imgArr[incNum2%3]+'.jpg';
+}
+var gameStart = function(user){
+    console.log("사용자", user);
+
+    //이미지 전환을 중지
+    clearInterval(timer);
+
+    //컴퓨터가 가위바위보를 내기 위해 1~3까지의 난수를 생성한다.
+    var com = parseInt(Math.random()*3) + 1;
+    //컴퓨터의 이미지 변경
+    if(com==1) comImg.src="../images/scissors.jpg";
+    if(com==2) comImg.src="../images/rock.jpg";
+    if(com==3) comImg.src="../images/paper.jpg";
+    //사용자의 이미지 변경
+    userImg.src="../images/"+imgArr[user-1]+".jpg";
+
+    //승부판단
+    var result = document.getElementById("result");
+    switch(user - com){
+        case 0:
+            console.log("비겼습니다.");
+            result.innerHTML = "비겼습니다.";
+            break;
+        case 1: case -2:
+            console.log("이겼습니다.");
+            result.innerHTML = "이겼습니다.";
+            break;
+        case -1: case 2:
+            console.log("졌습니다.");
+            result.innerHTML = "졌습니다.";
+    }
+}
+timer = setInterval('imgChange()', 100);
+</script>
+</head>
+<body>
+
+<h2>가위바위보 게임 만들기</h2>
+<fieldset>
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>컴퓨터</th>
+            <th>나</th>
+        </tr>
+        <tr>
+            <td><img src="../images/start.png" id="com"></td>          
+            <td><img src="../images/start.png" id="user"></td>
+        </tr>
+        <tr>
+            <th colspan="2" id="result">결과출력</th>
+        </tr>
+    </table>
+    <div>
+        <button onclick="gameStart(1);">가위</button>
+        <button onclick="gameStart(2);">바위</button>
+        <button onclick="gameStart(3);">보</button>
+    </div>
+</fieldset>
+</body>
+</html>
+
+
+

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B16Navs.html</title>
+<link rel="stylesheet" href="./bootstrap5.2.3/css/bootstrap.css">
+<script src="bootstrap5.2.3/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>탭 or Pills 메뉴</h2>
+    <!-- 
+    탭메뉴로 사용시
+    : class="nav nav-tabs" / data-bs-toggle="tab"
+    Pills메뉴로 사용시
+    : class="nav nav-pills" / data-bs-toggle="pill"
+
+    nav-justified : ul에 해당 클래스를 추가하면 화면의 가로
+        영역을 꽉 채우는 메뉴가 된다. 
+     -->
+    <ul class="nav nav-tabs " role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+    </ul>
+
+
+    <h2>다이나믹 탭 메뉴</h2>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" 
+                href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" 
+                href="#menu1">Menu 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" 
+                href="#menu2">Menu 2</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div id="home" class="container tab-pane active"><br>
+            <h3>HOME</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div id="menu1" class="container tab-pane fade"><br>
+            <h3>Menu 1</h3>
+            <p>
+                <img src="https://tjoeun.co.kr/images/logo.gif?v=20190918" alt="">
+            </p>
+        </div>
+        <div id="menu2" class="container tab-pane fade"><br>
+            <h3>Menu 2</h3>
+            <h2>게시판 목록에 페이지번호 적용하기</h2>
+            <table class="table table-hover">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>No</th>
+                    <th>Title</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100</td>
+                    <td><a href="#">오늘 날씨가 너무 추워요</a>
+                        <span class="badge bg-primary">new</span>
+                    </td>
+                    <td>동장군</td>
+                    <td>2022-11-30</td>
+                </tr>
+                <tr>
+                    <td>99</td>
+                    <td><a href="#">오늘 날씨가 너무 추워요</a>
+                        <span class="badge rounded-pill bg-success">
+                            댓글:80</span></td>
+                    <td>동장군</td>
+                    <td>2022-11-30</td>
+                </tr>
+                <tr>
+                    <td>98</td>
+                    <td><a href="#">오늘 날씨가 너무 추워요</a></td>
+                    <td>동장군</td>
+                    <td>2022-11-30</td>
+                </tr>
+                <tr>
+                    <td>97</td>
+                    <td><a href="#">오늘 날씨가 너무 추워요</a></td>
+                    <td>동장군</td>
+                    <td>2022-11-30</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
